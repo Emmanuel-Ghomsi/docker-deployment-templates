@@ -1,14 +1,15 @@
-# 🚀 Docker Deployment Templates - PostgreSQL, MongoDB & Keycloak  
+# 🚀 Docker Deployment Templates - PostgreSQL, MongoDB, Keycloak & Odoo
 
 ![Docker](https://img.shields.io/badge/Docker-Supported-blue?logo=docker)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-green)
 ![License](https://img.shields.io/github/license/emmanuel-ghomsi/docker-deployment-templates)
 
-📌 Ce repository contient **trois templates Docker Compose** permettant de déployer rapidement des services essentiels sur un serveur **VPS ou local** :
+📌 Ce repository contient **plusieurs templates Docker Compose** permettant de déployer rapidement des services essentiels sur un serveur **VPS ou local** :
 
 - 🛢️ **PostgreSQL + PGAdmin**
 - 📦 **MongoDB + Mongo Express**
 - 🔐 **Keycloak - Gestion des identités et authentification**
+- 📊 **Odoo – ERP open-source**
 
 ### 🚀 **Pourquoi utiliser ce repo ?**
 ✅ Déploiement **simplifié** et **rapide**  
@@ -28,6 +29,7 @@
 ┣ 📜 docker-compose.keycloak.yml # Déploiement de Keycloak
 ┣ 📜 docker-compose.postgres.yml # Déploiement de PostgreSQL + PGAdmin
 ┣ 📜 docker-compose.mongo.yml # Déploiement de MongoDB + Mongo Express
+┣ 📜 docker-compose.odoo.yml        # Déploiement d'Odoo ERP
 ```
 
 ---
@@ -57,4 +59,8 @@ docker-compose -f docker-compose.mongo.yml up -d
 ➡️ Lancer Keycloak :
 ```bash
 docker-compose -f docker-compose.keycloak.yml up -d
+```
+➡️ Lancer Odoo (connecté à PostgreSQL sur shared-network) :
+```bash
+docker-compose -f docker-compose.odoo.yml up -d
 ```

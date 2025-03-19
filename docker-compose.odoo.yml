@@ -1,0 +1,29 @@
+services:
+  odoo:
+    image: odoo:latest
+    container_name: odoo
+    restart: always
+    depends_on:
+      - postgres
+    networks:
+      - shared-network
+    ports:
+      - "8069:8069"
+      - "8071:8071"
+      - "8072:8072"
+    environment:
+      - HOST=postgres
+      - PORT=5432
+      - USER=${POSTGRES_USER}
+      - PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - odoo_data:/var/lib/odoo
+      - ./config/odoo.conf:/etc/odoo/odoo.conf
+      - ./addons:/mnt/extra-addons
+
+networks:
+  shared-network:
+    external: true
+
+volumes:
+  odoo_data:
