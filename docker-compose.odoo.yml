@@ -3,8 +3,6 @@ services:
     image: odoo:latest
     container_name: odoo
     restart: always
-    depends_on:
-      - postgres
     networks:
       - shared-network
     ports:
