@@ -30,6 +30,9 @@
 ┣ 📜 docker-compose.postgres.yml # Déploiement de PostgreSQL + PGAdmin
 ┣ 📜 docker-compose.mongo.yml # Déploiement de MongoDB + Mongo Express
 ┣ 📜 docker-compose.odoo.yml        # Déploiement d'Odoo ERP
+┣ 📂 config                         # Configuration des services
+┃   ┣ 📜 odoo.conf                  # Configuration de Odoo
+┃   ┗ 📂 addons/ 
 ```
 
 ---
