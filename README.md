@@ -10,6 +10,8 @@
 - 📦 **MongoDB + Mongo Express**
 - 🔐 **Keycloak - Gestion des identités et authentification**
 - 📊 **Odoo – ERP open-source**
+- 📊 **Grafana**
+- 📊 **Prometheus**
 
 ### 🚀 **Pourquoi utiliser ce repo ?**
 ✅ Déploiement **simplifié** et **rapide**  
@@ -24,12 +26,13 @@
 ```yaml
 📦 docker-deployment-templates
 ┣ 📜 .env.example # Variables d’environnement
-┣ 📜 LICENSE # Licence MIT
-┣ 📜 README.md # Documentation
-┣ 📜 docker-compose.keycloak.yml # Déploiement de Keycloak
-┣ 📜 docker-compose.postgres.yml # Déploiement de PostgreSQL + PGAdmin
-┣ 📜 docker-compose.mongo.yml # Déploiement de MongoDB + Mongo Express
+┣ 📜 LICENSE                        # Licence MIT
+┣ 📜 README.md                      # Documentation
+┣ 📜 docker-compose.keycloak.yml    # Déploiement de Keycloak
+┣ 📜 docker-compose.postgres.yml    # Déploiement de PostgreSQL + PGAdmin
+┣ 📜 docker-compose.mongo.yml       # Déploiement de MongoDB + Mongo Express
 ┣ 📜 docker-compose.odoo.yml        # Déploiement d'Odoo ERP
+┣ 📜 docker-compose.monitoring.yml  # Déploiement de Grafana + Prometheus
 ┣ 📂 config                         # Configuration des services
 ┃   ┣ 📜 odoo.conf                  # Configuration de Odoo
 ┃   ┗ 📂 addons/ 
