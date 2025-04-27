@@ -8,6 +8,8 @@ services:
     volumes:
       - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./config/prometheus/file_sd:/etc/prometheus/file_sd
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     networks:
       - shared-network
 
