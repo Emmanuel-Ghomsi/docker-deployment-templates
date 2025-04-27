@@ -7,7 +7,7 @@ services:
       - "9090:9090"
     volumes:
       - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./prometheus/file_sd:/etc/prometheus/file_sd
+      - ./config/prometheus/file_sd:/etc/prometheus/file_sd
     networks:
       - shared-network
 
