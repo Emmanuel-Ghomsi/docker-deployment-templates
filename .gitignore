@@ -1,1 +1,2 @@
 /config/prometheus/file_sd/*
+/config/loki/logs_sd/*
