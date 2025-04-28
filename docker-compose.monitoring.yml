@@ -19,6 +19,7 @@ services:
     ports:
       - "3100:3100"
     volumes:
+      - ./loki:/loki
       - ./config/loki/loki-config.yml:/etc/loki/local-config.yaml
     command: -config.file=/etc/loki/local-config.yaml
     networks:
