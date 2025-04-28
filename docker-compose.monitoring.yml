@@ -16,10 +16,12 @@ services:
   loki:
     image: grafana/loki:2.9.2
     container_name: loki
+    restart: unless-stopped
     ports:
       - "3100:3100"
     volumes:
       - ./config/loki/loki-config.yml:/etc/loki/loki-config.yml
+      - ./loki:/loki
     command: -config.file=/etc/loki/loki-config.yml
     networks:
       - shared-network
@@ -27,6 +29,7 @@ services:
   promtail:
     image: grafana/promtail:2.9.2
     container_name: promtail
+    restart: unless-stopped
     volumes:
       - ./config/loki/promtail-config.yml:/etc/promtail/config.yml
       - ./config/loki/logs_sd:/etc/promtail/logs_sd

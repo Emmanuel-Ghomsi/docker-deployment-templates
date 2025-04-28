@@ -5,6 +5,7 @@ server:
   grpc_listen_port: 9095
 
 common:
+  path_prefix: /loki
   storage:
     filesystem:
       chunks_directory: /loki/chunks
@@ -44,10 +45,21 @@ storage_config:
   filesystem:
     directory: /loki/chunks
 
+# To avoid disk pressure
+compactor:
+  working_directory: /loki/compactor
+  shared_store: filesystem
+  compaction_interval: 5m
+  retention_enabled: true
+  retention_delete_delay: 1h
+  retention_delete_worker_count: 150
+
 limits_config:
   enforce_metric_name: false
   reject_old_samples: true
   reject_old_samples_max_age: 168h
+  ingestion_rate_mb: 64
+  ingestion_burst_size_mb: 128
 
 chunk_store_config:
   max_look_back_period: 0s
