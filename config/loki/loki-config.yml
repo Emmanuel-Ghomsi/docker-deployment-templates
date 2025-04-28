@@ -5,7 +5,6 @@ server:
   grpc_listen_port: 9095
 
 common:
-  path: /loki
   storage:
     filesystem:
       chunks_directory: /loki/chunks
