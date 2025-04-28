@@ -33,7 +33,7 @@ services:
     volumes:
       - ./config/loki/promtail-config.yml:/etc/promtail/config.yml
       - ./config/loki/logs_sd:/etc/promtail/logs_sd
-      - /root:/projects_root
+      - ./logs:/var/log/projects
     command: -config.file=/etc/promtail/config.yml
     networks:
       - shared-network
