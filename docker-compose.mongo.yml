@@ -2,19 +2,21 @@ services:
   mongo:
     image: mongo:latest
     container_name: mongodb
+    restart: unless-stopped
     ports:
       - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     volumes:
-      - mongo_data:/data/db # Persistance des données
+      - mongo_data:/data/db
     networks:
       - shared-network
 
   mongo-express:
     image: mongo-express:latest
     container_name: mongo-express
+    restart: unless-stopped
     ports:
       - "8083:8081"
     environment:
@@ -23,13 +25,16 @@ services:
       ME_CONFIG_MONGODB_URL: ${ME_CONFIG_MONGODB_URL}
       ME_CONFIG_OPTIONS_EDIT: "true"
       ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_BASICAUTH_USERNAME: ${ME_CONFIG_BASICAUTH_USERNAME}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${ME_CONFIG_BASICAUTH_PASSWORD}
     depends_on:
       - mongo
     networks:
       - shared-network
 
 volumes:
-  mongo_data: # Définition du volume persistant
+  mongo_data:
 
 networks:
   shared-network:

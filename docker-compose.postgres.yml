@@ -9,7 +9,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data # Persistance des données
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - shared-network
 
@@ -27,8 +27,8 @@ services:
       - shared-network
 
 volumes:
-  postgres_data: # Définition du volume persistant
+  postgres_data:
 
 networks:
   shared-network:
-    external: true # Utiliser le réseau partagé existant
+    external: true
