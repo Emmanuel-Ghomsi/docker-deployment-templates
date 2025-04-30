@@ -21,8 +21,8 @@ scrape_configs:
           source: timestamp
           format: RFC3339
       - labels:
-          values:
-            - level
-            - app
-            - thread
-            - class
+          level: null
+          app: null
+          thread: null
+          class: null
+
