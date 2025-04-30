@@ -14,3 +14,15 @@ scrape_configs:
       - files:
           - /etc/promtail/logs_sd/*.yml
         refresh_interval: 30s
+    pipeline_stages:
+      - regex:
+          expression: '^(?P<timestamp>\d{4}-\d{2}-\d{2}T[^ ]+) (?P<level>[A-Z]+) (?P<pid>\d+) --- \[(?P<app>[^\]]+)] \[(?P<thread>[^\]]+)] (?P<class>[^\s]+)\s+: (?P<message>.*)'
+      - timestamp:
+          source: timestamp
+          format: RFC3339
+      - labels:
+          values:
+            - level
+            - app
+            - thread
+            - class
