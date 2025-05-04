@@ -17,7 +17,7 @@ services:
       # Admin Credentials
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
-    restart: always
+    restart: unless-stopped
     ports:
       - ${PORT_KEYCLOAK}:8080
     networks:

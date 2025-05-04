@@ -2,7 +2,7 @@ services:
   odoo:
     image: odoo:latest
     container_name: odoo
-    restart: always
+    restart: unless-stopped
     networks:
       - shared-network
     ports:
