@@ -16,7 +16,7 @@ services:
       - PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - odoo_data:/var/lib/odoo
-      - ./config/odoo.conf:/etc/odoo/odoo.conf
+      - ./config/odoo/odoo.conf:/etc/odoo/odoo.conf
       - ./addons:/mnt/extra-addons
 
 networks:
