@@ -54,8 +54,6 @@ services:
     
 volumes:
   grafana-data:
-    external: true
-    name: docker-deployment-templates_grafana-data
 
 networks:
   shared-network:

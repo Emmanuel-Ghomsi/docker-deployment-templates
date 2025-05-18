@@ -30,8 +30,6 @@ services:
 
 volumes:
   postgres_data:
-    external: true
-    name: docker-deployment-templates_postgres_data
 
 networks:
   shared-network:
