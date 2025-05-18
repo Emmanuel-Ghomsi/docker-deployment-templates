@@ -54,6 +54,7 @@ services:
     
 volumes:
   grafana-data:
+    external: true
 
 networks:
   shared-network:

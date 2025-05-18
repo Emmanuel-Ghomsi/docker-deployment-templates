@@ -43,6 +43,7 @@ services:
 
 volumes:
   maria_db_data:
+    external: true
 
 networks:
   shared-network:

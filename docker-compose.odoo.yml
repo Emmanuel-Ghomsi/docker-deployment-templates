@@ -19,9 +19,10 @@ services:
       - ./config/odoo/odoo.conf:/etc/odoo/odoo.conf
       - ./addons:/mnt/extra-addons
 
+volumes:
+  odoo_data:
+    external: true
+
 networks:
   shared-network:
     external: true
-
-volumes:
-  odoo_data:
