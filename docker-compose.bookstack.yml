@@ -44,6 +44,7 @@ services:
 volumes:
   maria_db_data:
     external: true
+    name: docker-deployment-templates_maria_db_data
 
 networks:
   shared-network:

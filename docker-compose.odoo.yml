@@ -22,6 +22,7 @@ services:
 volumes:
   odoo_data:
     external: true
+    name: docker-deployment-templates_odoo_data
 
 networks:
   shared-network:
